@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="rootPane" prefHeight="400.0" prefWidth="878.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ro.ubbcluj.cs.map.socialnetworkgui.OpenUserWindowController">
+   <children>
+      <SplitPane dividerPositions="0.15" layoutX="132.0" layoutY="100.0" orientation="VERTICAL" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="61.0" prefWidth="606.0">
+               <children>
+                  <Label fx:id="userLabel" layoutX="117.0" layoutY="35.0" prefHeight="57.0" prefWidth="598.0" text="User" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="5.0">
+                     <font>
+                        <Font name="System Bold Italic" size="18.0" />
+                     </font></Label>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <GridPane alignment="CENTER_RIGHT" layoutX="136.0" layoutY="99.0" prefHeight="335.0" prefWidth="619.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <columnConstraints>
+                      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="380.0" />
+                      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints maxHeight="280.0" minHeight="10.0" prefHeight="275.0" valignment="TOP" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="100.0" minHeight="10.0" prefHeight="60.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <TableView fx:id="tableViewFriends" prefHeight="235.0" prefWidth="471.0">
+                          <columns>
+                            <TableColumn fx:id="friendIdColumn" prefWidth="73.0" text="ID" />
+                            <TableColumn fx:id="friendFirstNameColumn" prefWidth="102.0" text="First Name" />
+                              <TableColumn fx:id="friendLastNameColumn" prefWidth="106.0" text="Last Name" />
+                              <TableColumn fx:id="friendsFromColumn" prefWidth="131.0" text="Friends From" />
+                              <TableColumn fx:id="friendshipStatusColumn" prefWidth="75.0" text="Status" />
+                          </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                           <GridPane.margin>
+                              <Insets left="15.0" right="10.0" top="40.0" />
+                           </GridPane.margin>
+                        </TableView>
+                        <ButtonBar nodeOrientation="RIGHT_TO_LEFT" prefHeight="40.0" prefWidth="200.0" GridPane.rowIndex="1">
+                          <buttons>
+                              <Button mnemonicParsing="false" onAction="#onPressMessages" text="Messages">
+                                 <font>
+                                    <Font name="System Bold Italic" size="12.0" />
+                                 </font>
+                              </Button>
+                              <Button mnemonicParsing="false" onAction="#onPressDeleteFriendshipOrRequest" text="Remove">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Button>
+                            <Button mnemonicParsing="false" onAction="#onPressAdd" text="Add">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font></Button>
+                          </buttons>
+                           <GridPane.margin>
+                              <Insets bottom="10.0" left="15.0" right="10.0" top="10.0" />
+                           </GridPane.margin>
+                        </ButtonBar>
+                        <ButtonBar buttonMinWidth="80.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="40.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                          <buttons>
+                              <Button mnemonicParsing="false" onAction="#onPressAccept" text="Accept">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font></Button>
+                              <Button mnemonicParsing="false" onAction="#onPressReject" text="Reject">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font></Button>
+                            <Button mnemonicParsing="false" onAction="#onPressExit" text="Exit">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font></Button>
+                          </buttons>
+                           <GridPane.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </GridPane.margin>
+                        </ButtonBar>
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="41.0" prefWidth="439.0" text="Friends">
+                           <GridPane.margin>
+                              <Insets />
+                           </GridPane.margin>
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <TableView fx:id="tableViewFriendRequest" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+                          <columns>
+                            <TableColumn fx:id="userIdColumn" prefWidth="73.0" text="ID" />
+                            <TableColumn fx:id="userFirstNameColumn" prefWidth="115.0" text="First Name" />
+                              <TableColumn fx:id="userLastNameColumn" prefWidth="121.0" text="Last Name" />
+                          </columns>
+                           <GridPane.margin>
+                              <Insets left="5.0" right="10.0" top="40.0" />
+                           </GridPane.margin>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                        </TableView>
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="41.0" prefWidth="298.0" text="Friend Requests" GridPane.columnIndex="1">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </GridPane>
+               </children></AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ro.ubbcluj.cs.map.socialnetworkgui.UserViewController">
+   <children>
+      <SplitPane dividerPositions="0.8" layoutX="100.0" layoutY="82.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <SplitPane dividerPositions="0.85" layoutX="101.0" layoutY="99.0" orientation="VERTICAL" prefHeight="398.0" prefWidth="416.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                           <children>
+                              <GridPane layoutX="15.0" layoutY="15.0" prefHeight="315.0" prefWidth="793.0" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints maxHeight="260.0" minHeight="230.0" prefHeight="283.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="72.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <children>
+                                    <TableView fx:id="userTableView" prefHeight="271.0" prefWidth="793.0">
+                                      <columns>
+                                        <TableColumn fx:id="userIdColumn" prefWidth="75.0" text="ID" />
+                                        <TableColumn fx:id="userFirstNameColumn" prefWidth="75.0" text="First name" />
+                                          <TableColumn fx:id="userLastNameColumn" prefWidth="75.0" text="Last name" />
+                                      </columns>
+                                       <columnResizePolicy>
+                                          <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                       </columnResizePolicy>
+                                       <GridPane.margin>
+                                          <Insets left="15.0" right="15.0" top="15.0" />
+                                       </GridPane.margin>
+                                    </TableView>
+                                    <ButtonBar accessibleRole="BUTTON" cache="true" depthTest="DISABLE" prefHeight="38.0" prefWidth="672.0" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                                      <buttons>
+                                          <Button fx:id="previousButton" alignment="CENTER" contentDisplay="CENTER" maxWidth="50.0" mnemonicParsing="false" onAction="#onButtonPressPrevious" prefHeight="25.0" prefWidth="50.0" text="Previous" />
+                                          <HBox alignment="CENTER" prefHeight="38.0" prefWidth="664.0">
+                                             <children>
+                                                <Label text="Users per page">
+                                                   <font>
+                                                      <Font name="System Italic" size="13.0" />
+                                                   </font>
+                                                </Label>
+                                                <TextField fx:id="pageSizeField" maxWidth="30.0">
+                                                   <HBox.margin>
+                                                      <Insets left="10.0" />
+                                                   </HBox.margin>
+                                                </TextField>
+                                             </children></HBox>
+                                        <Button fx:id="nextButton" alignment="CENTER" contentDisplay="CENTER" maxWidth="50.0" mnemonicParsing="false" onAction="#onButtonPressNext" prefHeight="25.0" prefWidth="50.0" text="Next" />
+                                      </buttons>
+                                       <GridPane.margin>
+                                          <Insets right="15.0" />
+                                       </GridPane.margin>
+                                       <padding>
+                                          <Insets left="-5.0" />
+                                       </padding>
+                                    </ButtonBar>
+                                 </children>
+                              </GridPane>
+                           </children>
+                        </AnchorPane>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                           <children>
+                              <HBox alignment="CENTER" layoutX="67.0" layoutY="-12.0" prefHeight="76.0" prefWidth="414.0" spacing="40.0" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
+                                 <children>
+                                    <Button alignment="CENTER" mnemonicParsing="false" onAction="#onPressAddUser" prefWidth="80.0" text="Add" textAlignment="JUSTIFY" textFill="#00900c">
+                                       <font>
+                                          <Font name="System Bold Italic" size="14.0" />
+                                       </font>
+                                    </Button>
+                                    <Button alignment="CENTER" mnemonicParsing="false" onAction="#onPressDeleteUser" prefWidth="80.0" text="Delete" textAlignment="JUSTIFY" textFill="#ab0000">
+                                       <font>
+                                          <Font name="System Bold Italic" size="14.0" />
+                                       </font>
+                                    </Button>
+                                    <Button alignment="CENTER" mnemonicParsing="false" onAction="#onPressUpdateUser" prefWidth="80.0" text="Update" textAlignment="JUSTIFY" textFill="#002ac3">
+                                       <font>
+                                          <Font name="System Bold Italic" size="14.0" />
+                                       </font>
+                                    </Button>
+                                    <Button alignment="CENTER" mnemonicParsing="false" onAction="#onPressOpen" prefWidth="80.0" text="Open" textFill="#f0001a">
+                                       <font>
+                                          <Font name="System Bold Italic" size="14.0" />
+                                       </font>
+                                    </Button>
+                                    <Button mnemonicParsing="false" onAction="#onPressViewMessages" text="View messages" textFill="#b200a0">
+                                       <font>
+                                          <Font name="System Bold Italic" size="14.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                              </HBox>
+                           </children></AnchorPane>
+                    </items>
+                  </SplitPane>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <SplitPane dividerPositions="0.85" layoutX="33.0" layoutY="-2.0" orientation="VERTICAL" prefHeight="400.0" prefWidth="231.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-2.0">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="193.0" prefWidth="224.0">
+                           <children>
+                              <HBox alignment="CENTER" layoutX="12.0" layoutY="20.0" prefHeight="46.0" prefWidth="214.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="15.0">
+                                 <children>
+                                    <TextField fx:id="textFieldSearch" promptText="Search here">
+                                       <font>
+                                          <Font name="System Italic" size="12.0" />
+                                       </font>
+                                    </TextField>
+                                    <Button mnemonicParsing="false" onAction="#onPressSearch" text="Go" />
+                                 </children>
+                              </HBox>
+                           </children></AnchorPane>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                           <children>
+                              <ButtonBar layoutX="12.0" layoutY="18.0" prefHeight="76.0" prefWidth="224.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+                                <buttons>
+                                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onPressRefreshUser" text="Refresh">
+                                       <font>
+                                          <Font name="System Bold Italic" size="12.0" />
+                                       </font>
+                                    </Button>
+                                    <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onPressExit" text="Exit">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Button>
+                                </buttons>
+                              </ButtonBar>
+                           </children></AnchorPane>
+                    </items>
+                  </SplitPane>
+               </children></AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
